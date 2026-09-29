@@ -1,0 +1,12 @@
+Output a single complete HTML file and nothing else. No markdown fences, no commentary. The first line must be <!DOCTYPE html>.
+
+The page renders an original impressionist-style landscape painting on a full-viewport <canvas> using vanilla JavaScript and the Canvas 2D API. No external assets, fonts, images, or libraries.
+
+Requirements:
+
+- Theme: a beautiful natural landscape in the spirit of Monet, Pissarro, or early Sorolla. Pick one scene and commit to it: misty lake at dawn, haystacks at golden hour, coastal cliffs, snowy orchard, lavender field, river with sailboats, cypresses under a swirling sky, water lilies, a wheat field with poppies.
+- Painterly technique: thousands of short translucent brush strokes with slight rotation jitter, layered complementary color dabs, soft edges, atmospheric haze near the horizon, one warm light source. It must read as a painting, not a gradient.
+- Composition suited to a desktop wallpaper: keep the middle band calm since desktop icons live there, push detail and contrast toward the edges and sky.
+- Deterministic: seed a small PRNG (mulberry32 or similar) with the integer {{SEED}} so the same file renders identically every run. Today is {{DATE}}; let season and light subtly reflect the date.
+- Render once on load, filling the entire window (canvas fixed, 100vw x 100vh). Be devicePixelRatio aware. The painting must be completely finished within ~1 second of load; no long progressive paint loops and no reliance on requestAnimationFrame timers to finish.
+- No animation, no UI, no text, body margin 0, cursor hidden, body background set to the painting's edge color.
